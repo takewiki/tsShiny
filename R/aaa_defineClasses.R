@@ -49,4 +49,70 @@ ui_text <- function( inputId="txt1",
 }
 
 
+#' 定义新的ui_number_slider option选英
+#'
+#' @slot inputId character.  内码
+#' @slot label character.  标签名称
+#' @slot max numeric.  最大值
+#' @slot min numeric.  最小值
+#' @slot value numeric. 默认值
+#' @slot step numeric. 步长
+#' @slot width character. 宽度
+#'
+#' @return
+#' @export
+#'
+#' @examples
+setClass("ui_number_slider",
+                      slot=c(inputId = "character",
+                             label = "character",
+                             max="numeric",
+                             min="numeric",
+                             value="numeric",
+                             step="numeric",
+                             width="character"),
+                      prototype = prototype(
+                        inputId="sliderInput1",
+                        label="number slider1",
+                        min=1,
+                        max=500,
+                        value=300,
+                        step=5,
+                        width="400px"
+                      ) );
 
+
+#' 定义使用创建ui_number_input实例化函数
+#'
+#' @param inputId 内码
+#' @param label  标签
+#' @param min  最小值
+#' @param max 最大值
+#' @param value 默认值
+#' @param step 步长
+#' @param width  宽度
+#'
+#' @return 返回值
+#' @import shiny
+#' @export
+#'
+#' @examples
+ui_number_slider <- function(inputId="sliderInput1",
+                             label="number slider1",
+                             min=1,
+                             max=500,
+                             value=300,
+                             step=5,
+                             width="400px"){
+     res <- new("ui_number_slider");
+     res2 <-initialize(res,
+                       inputId=inputId,
+                       label=label,
+                       min=min,
+                       max=max,
+                       value=value,
+                       step=step,
+                       width=width
+                       )
+
+}
