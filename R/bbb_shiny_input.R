@@ -6,7 +6,7 @@
 #' @include aaa_defineClasses.R
 #' @export
 #'
-#' @examples
+#' @examples shiny_input(bbc);
 setGeneric("shiny_input",
            signature = "x",
            function(x) standardGeneric("shiny_input"));

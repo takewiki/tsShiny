@@ -59,10 +59,10 @@ ui_text <- function( inputId="txt1",
 #' @slot step numeric. 步长
 #' @slot width character. 宽度
 #'
-#' @return
+#' @return 返回值
 #' @export
 #'
-#' @examples
+#' @examples ui_number_slider
 setClass("ui_number_slider",
                       slot=c(inputId = "character",
                              label = "character",
@@ -96,7 +96,7 @@ setClass("ui_number_slider",
 #' @import shiny
 #' @export
 #'
-#' @examples
+#' @examples ui_number_slider();
 ui_number_slider <- function(inputId="sliderInput1",
                              label="number slider1",
                              min=1,
