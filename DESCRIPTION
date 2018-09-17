@@ -12,5 +12,4 @@ LazyData: true
 Collate: 
     'aaa_defineClasses.R'
     'bbb_shiny_input.R'
-    'hello.R'
 RoxygenNote: 6.0.1
