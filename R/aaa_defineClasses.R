@@ -166,3 +166,93 @@ ui_number_slider <- function(inputId="sliderInput1",
                        )
 
 }
+
+#3.1 定义日期型的控件ui_date 选项----
+#' 定义日期型的输入控件ui_date S4类
+#'
+#' @slot inputId character.内码
+#' @slot label character. 标签
+#' @slot value character.  默认值
+#' @slot min character. 最小值
+#' @slot max character. 最大值
+#' @slot format character. 日期格式
+#' @slot startview character. 日历形式month,year,decade
+#' @slot weekstart integer. 0表示周日开始，1表示周1开始
+#' @slot language character. 语言en,zh-CN,zh-TW
+#' @slot width character. 宽度
+#' @slot autoclose logical. 是否自动关闭
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples ui_date(x);
+setClass("ui_date", slots = c(inputId = "character",
+                              label="character",
+                              value="character",
+                              min="character",
+                              max="character",
+                              format="character",
+                              startview="character",
+                              weekstart="integer",
+                              language="character",
+                              width="character",
+                              autoclose="logical"),
+                    prototype = prototype(
+                              inputId="date1",
+                              label="输入日期:",
+                              value="2016-01-01",
+                              min="1984-01-01",
+                              max="2100-12-31",
+                              format="yyyy-mm-dd",
+                              startview="month",
+                              weekstart=0L,
+                              language="zh-CN",
+                              width="100%",
+                              autoclose=TRUE
+                    ))
+
+# ui_date实例化入口func ----
+#' ui_date实例化入口func
+#'
+#' @param inputId 内码
+#' @param label 标签
+#' @param value 默认值
+#' @param min  最小值
+#' @param max  最大值
+#' @param format 日期格式
+#' @param startview 日历格式
+#' @param weekstart 开始于
+#' @param width 宽度
+#' @param language 日历语言
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples ui_date();
+ui_date <- function(inputId="date1",
+                    label="输入日期:",
+                    value="2016-01-01",
+                    min="1984-01-01",
+                    max="2100-12-31",
+                    format="yyyy-mm-dd",
+                    startview="month",
+                    weekstart=0L,
+                    language="zh-CN",
+                    width="100%",
+                    autoclose=TRUE) {
+  res <- new("ui_date");
+  res2 <- initialize(res,
+                     inputId=inputId,
+                     label=label,
+                     value=value,
+                     min=min,
+                     max=max,
+                     format=format,
+                     startview=startview,
+                     weekstart=weekstart,
+                     language=language,
+                     width=width,
+                     autoclose=autoclose);
+  return(res2);
+
+}
