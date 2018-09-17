@@ -1,4 +1,4 @@
-
+#1.1 定义文本字段类型的S4----
 #' 定义ui_text iption的特殊类，用于存储相应的界面数据
 #'
 #' @slot inputId character. 内码Id,用于input$inputId
@@ -80,8 +80,58 @@ setClass("ui_number_slider",
                         step=5,
                         width="400px"
                       ) );
+# 定义一个密码输入UI 插件 password----
+
+#' 创建日期控件的选项
+#'
+#' @slot inputId character. 内码
+#' @slot label character.  标签
+#' @slot value character. 初始值
+#' @slot width character. 宽度
+#'
+#' @return  还回值
+#' @export
+#'
+#' @examples ui_password(aa);
+setClass("ui_password",
+                      slot=c(inputId = "character",
+                             label = "character",
+                             value="character",
+                             width="character"),
+                      prototype = prototype(
+                             inputId="password1",
+                             label="输入密码:",
+                             value="888888",
+                             width="100%"
+                      ));
+#' ui_password的实例化function
+#'
+#' @param inputId  内码
+#' @param label  标签
+#' @param value 初始值
+#' @param width 控件宽度
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples ui_password();
+ui_password <- function(inputId="password1",
+                        label="输入密码:",
+                        value="888888",
+                        width="100%") {
+  res <- new("ui_password");
+  res2 <- initialize(res,
+                     inputId=inputId,
+                     label=label,
+                     value=value,
+                     width=width);
+  return(res2)
 
 
+}
+
+
+# 2.1 定义数值类型的数据，整体数slider----
 #' 定义使用创建ui_number_input实例化函数
 #'
 #' @param inputId 内码
