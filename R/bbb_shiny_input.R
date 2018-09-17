@@ -1,3 +1,4 @@
+# 定义shiny_input Generic Func----
 #' 定义通用的输入函数
 #'
 #' @param x 对象签名
@@ -11,6 +12,7 @@ setGeneric("shiny_input",
            signature = "x",
            function(x) standardGeneric("shiny_input"));
 
+# shiny_input for class ui_text----
 #' shiny_input用于ui_text的处理方法定义
 #'
 #' @param x ui_text.
@@ -28,6 +30,25 @@ setMethod("shiny_input",
                       value=x@value,
                       width = x@width)
                       });
+
+#' 定义shiny_input对ui_password的实现
+#'
+#' @param x ui_password. 实例化对象ui_password
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples shiny_input(x);
+setMethod("shiny_input",
+          c("x" = "ui_password"),
+          function(x){
+            textInput(inputId = x@inputId,
+                      label= x@label,
+                      value=x@value,
+                      width = x@width)
+          });
+
+
 
 #' 定义shiny_input在ui_number_slider上的实现代码
 #'
