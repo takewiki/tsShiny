@@ -2,8 +2,10 @@
 
 export(shiny_input)
 export(ui_number_slider)
+export(ui_password)
 export(ui_text)
 exportClasses(ui_number_slider)
+exportClasses(ui_password)
 exportClasses(ui_text)
 exportMethods(shiny_input)
 import(shiny)
