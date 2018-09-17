@@ -72,3 +72,49 @@ setMethod("shiny_input",
                         width = x@width)
 
                       });
+
+# shiny_input在ui_date上的方法实现----
+#' shiny_input for ui_date
+#'
+#' @param x ui_date.  对象
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples shiny_input(x);
+setMethod("shiny_input",
+          c("x"="ui_date"),
+          function(x) {
+            if (x@value == "") {
+              dateInput(inputId = x@inputId,
+                        label = x@label,
+                        value = NULL,
+                        min = x@min,
+                        max = x@max,
+                        format = x@format,
+                        startview = x@startview,
+                        weekstart = x@weekstart,
+                        language = x@language,
+                        width = x@width,
+                        autoclose = x@autoclose)
+
+            }else{
+              dateInput(inputId = x@inputId,
+                        label = x@label,
+                        value = x@value,
+                        min = x@min,
+                        max = x@max,
+                        format = x@format,
+                        startview = x@startview,
+                        weekstart = x@weekstart,
+                        language = x@language,
+                        width = x@width,
+                        autoclose = x@autoclose)
+
+            }
+
+
+
+
+})
+
