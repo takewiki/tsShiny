@@ -10,7 +10,7 @@
 #' @import shiny
 #' @export
 #'
-#' @examples ui_text("aaaa");
+#' @examples ui_text("aaaa")
 setClass("ui_text",
                       slot=c(inputId = "character",
                              label = "character",
@@ -34,7 +34,7 @@ setClass("ui_text",
 #' @return 返回值
 #' @export
 #'
-#' @examples bb <-ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%");
+#' @examples ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%")
 ui_text <- function( inputId="txt1",
                      label="text1_caption",
                      value="",
@@ -255,4 +255,70 @@ ui_date <- function(inputId="date1",
                      autoclose=autoclose);
   return(res2);
 
+}
+
+# 定义一个文件上传控件ui_file----
+#' Title
+#'
+#' @slot inputId character. 内码
+#' @slot label character.  标签
+#' @slot multiple logical. 是否支持批量上传
+#' @slot accept character.  是否指定文件后缀名
+#' @slot width character.   宽度
+#' @slot buttonLabel character.   按纽文字内容
+#' @slot placeholder character.   占位符内容
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples  ui_file("sample.xlsx")
+setClass("ui_file", slots = c(inputId = "character",
+                              label="character",
+                              multiple="logical",
+                              accept="character",
+                              width="character",
+                              buttonLabel="character",
+                              placeholder="character"
+                              ),
+                  prototype = prototype(
+                              inputId="fileInput1",
+                              label="上传文件:",
+                              multiple=FALSE,
+                              accept="",
+                              width="100%",
+                              buttonLabel="浏览...",
+                              placeholder="没有选中任何文件！"
+
+                  ))
+#' ui_file上传控件的入口实例化函数
+#'
+#' @param inputId  内码
+#' @param label  标签
+#' @param multiple  是否批量上传
+#' @param accept  是否指定文件后缀名
+#' @param width  是否指定宽度
+#' @param buttonLabel  按纽标签名称
+#' @param placeholder   点位符内容
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples  ui_file();
+ui_file <- function(inputId="fileInput1",
+                    label="上传文件:",
+                    multiple=FALSE,
+                    accept="",
+                    width="100%",
+                    buttonLabel="浏览...",
+                    placeholder="没有选中任何文件！") {
+
+  res <- new("ui_file");
+  res2 <- initialize(res,
+                     inputId=inputId,
+                     label=label,
+                     multiple=multiple,
+                     accept=accept,
+                     width=width,
+                     buttonLabel=buttonLabel,
+                     placeholder=placeholder)
 }

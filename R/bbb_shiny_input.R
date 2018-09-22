@@ -118,3 +118,36 @@ setMethod("shiny_input",
 
 })
 
+#shiny_input在ui_file上进行方法实现----
+#' 定义shiny_input在ui_file上的实现
+#'
+#' @param x ui_file.  ui_file实例对象
+#'
+#' @return 返回值
+#' @export
+#'
+#' @examples shinput(ui_file_ins);
+setMethod("shiny_input", c("x"="ui_file"), function(x) {
+   if (x@accept =="") {
+     fileInput(inputId = x@inputId,
+               label = x@label,
+               multiple = x@multiple,
+               accept = NULL,
+               width = x@width,
+               buttonLabel = x@buttonLabel,
+               placeholder = x@placeholder)
+   } else {
+     fileInput(inputId = x@inputId,
+               label = x@label,
+               multiple = x@multiple,
+               accept = x@accept,
+               width = x@width,
+               buttonLabel = x@buttonLabel,
+               placeholder = x@placeholder)
+   }
+
+
+
+
+
+})

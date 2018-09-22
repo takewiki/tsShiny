@@ -23,5 +23,5 @@
 }}
 
 \examples{
-ui_text("aaaa");
+ui_text("aaaa")
 }
