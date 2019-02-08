@@ -23,5 +23,5 @@ ui_text(inputId = "txt1", label = "text1_caption", value = "",
 定义一个实例化函数，用于数据存储
 }
 \examples{
-ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80\%")
+ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80\%");
 }

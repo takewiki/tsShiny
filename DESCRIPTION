@@ -12,4 +12,5 @@ LazyData: true
 Collate: 
     'aaa_defineClasses.R'
     'bbb_shiny_input.R'
-RoxygenNote: 6.0.1
+    'getArgList.R'
+RoxygenNote: 6.1.0

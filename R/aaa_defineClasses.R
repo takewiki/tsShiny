@@ -10,7 +10,7 @@
 #' @import shiny
 #' @export
 #'
-#' @examples ui_text("aaaa")
+#' @examples ui_text("aaaa");
 setClass("ui_text",
                       slot=c(inputId = "character",
                              label = "character",
@@ -23,7 +23,7 @@ setClass("ui_text",
                          value="",
                          width="100%"
                        )
-                      );
+                      )
 #' 定义一个实例化函数，用于数据存储
 #'
 #' @param inputId 标签内码
@@ -34,7 +34,7 @@ setClass("ui_text",
 #' @return 返回值
 #' @export
 #'
-#' @examples ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%")
+#' @examples ui_text(inputId = 'aa',label = "bb",value = 'cc',width = "80%");
 ui_text <- function( inputId="txt1",
                      label="text1_caption",
                      value="",

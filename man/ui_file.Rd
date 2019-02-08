@@ -4,8 +4,9 @@
 \alias{ui_file}
 \title{ui_file上传控件的入口实例化函数}
 \usage{
-ui_file(inputId = "fileInput1", label = "上传文件:", multiple = FALSE,
-  accept = "", width = "100\%", buttonLabel = "浏览...",
+ui_file(inputId = "fileInput1", label = "上传文件:",
+  multiple = FALSE, accept = "", width = "100\%",
+  buttonLabel = "浏览...",
   placeholder = "没有选中任何文件！")
 }
 \arguments{
