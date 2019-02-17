@@ -12,6 +12,14 @@ LazyData: true
 Collate: 
     'aaa_defineClasses.R'
     'bbb_shiny_input.R'
+    'shinyElement.R'
+    'shinyOutputElement.R'
+    'output.dataTable.R'
+    'shinyInputElement.R'
+    'superButton.R'
+    'input.button.download.R'
+    'input.file.R'
+    'drawElement.R'
     'getArgList.R'
 RoxygenNote: 6.1.0
 Suggests: 
