@@ -21,6 +21,8 @@ Collate:
     'input.file.R'
     'drawElement.R'
     'getArgList.R'
+    'mdl.dataTable.preview.R'
+    'process.dataTable.preview.R'
 RoxygenNote: 6.1.0
 Suggests: 
     testthat
