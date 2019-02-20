@@ -14,15 +14,23 @@ Collate:
     'bbb_shiny_input.R'
     'shinyElement.R'
     'shinyOutputElement.R'
+    'superImagePlot.R'
+    'output.plot.R'
+    'output.image.R'
     'output.dataTable.R'
     'shinyInputElement.R'
     'superButton.R'
     'input.button.download.R'
     'input.file.R'
     'drawElement.R'
+    'format.image.R'
     'getArgList.R'
+    'mdl.button.download.R'
     'mdl.dataTable.preview.R'
+    'mdl.image.R'
+    'process.button.download.R'
     'process.dataTable.preview.R'
+    'process.image.R'
 RoxygenNote: 6.1.0
 Suggests: 
     testthat

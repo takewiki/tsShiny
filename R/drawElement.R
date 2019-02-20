@@ -71,3 +71,53 @@ setMethod("drawElement",
           dataTableOutput(outputId = x@Id)
           })
 
+
+
+# 定义drawElement方法在output.image类上的实现----
+#' Title
+#'
+#' @param x output.image.  output.image类的对象
+#'
+#' @return 返回值
+#' @include output.image.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "output.image"),
+          function(x){
+          imageOutput(outputId = x@Id,
+                      width = x@width,
+                      height = x@height,
+                      click = x@click,
+                      dblclick = x@dblclick,
+                      hover = x@hover,
+                      brush = x@brush,
+                      inline = x@inline)
+          })
+
+
+# 定义drawElement方法在output.plot类上的实现----
+#' Title
+#'
+#' @param x output.plot.  output.plot类的对象
+#'
+#' @return 返回值
+#' @include output.plot.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "output.plot"),
+          function(x){
+            plotOutput(outputId = x@Id,
+                        width = x@width,
+                        height = x@height,
+                        click = x@click,
+                        dblclick = x@dblclick,
+                        hover = x@hover,
+                        brush = x@brush,
+                        inline = x@inline)
+          })

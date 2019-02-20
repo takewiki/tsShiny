@@ -22,23 +22,19 @@ ui <- fluidPage(
                      "Number of bins:",
                      min = 1,
                      max = 50,
-                     value = 30)
-
+                     value = 30),
+         mdl.dataTable.preview2('dataTable2',label = 'bb2')
       ),
 
       # Show a plot of the generated distribution
       mainPanel(
-         plotOutput("distPlot"),
-         mdl.dataTable.preview(id = 'file1',label = '测试文本'),
-         mdl.dataTable.preview(id = 'file2',label = '测试文本2')
+         plotOutput("distPlot")
       )
    )
 )
 
 # Define server logic required to draw a histogram
 server <- function(input, output) {
-  callModule(process.dataTable.preview,'file1')
-  callModule(process.dataTable.preview,'file2')
 
    output$distPlot <- renderPlot({
       # generate bins based on input$bins from ui.R
@@ -48,6 +44,7 @@ server <- function(input, output) {
       # draw the histogram with the specified number of bins
       hist(x, breaks = bins, col = 'darkgray', border = 'white')
    })
+   callModule(process.dataTable.preview,'dataTable2')
 }
 
 # Run the application
