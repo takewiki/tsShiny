@@ -13,12 +13,14 @@ Collate:
     'aaa_defineClasses.R'
     'bbb_shiny_input.R'
     'shinyElement.R'
+    'shinyInputElement.R'
+    'superNumeric.R'
+    'input.numeric.R'
     'shinyOutputElement.R'
     'superImagePlot.R'
     'output.plot.R'
     'output.image.R'
     'output.dataTable.R'
-    'shinyInputElement.R'
     'superButton.R'
     'input.button.download.R'
     'input.file.R'
@@ -28,9 +30,12 @@ Collate:
     'mdl.button.download.R'
     'mdl.dataTable.preview.R'
     'mdl.image.R'
+    'mdl.numeric.R'
+    'mdl.plot.R'
     'process.button.download.R'
     'process.dataTable.preview.R'
     'process.image.R'
+    'process.plot.R'
 RoxygenNote: 6.1.0
 Suggests: 
     testthat

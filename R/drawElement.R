@@ -121,3 +121,28 @@ setMethod("drawElement",
                         brush = x@brush,
                         inline = x@inline)
           })
+
+
+# 定义drawElement方法在input.numeric上的实现----
+#' 定义drawElement方法在input.numeric上的实现
+#'
+#' @param x input.numeric. 定义对象
+#'
+#' @return 返回值
+#' @include input.numeric.R
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.numeric"),
+          function(x){
+          numericInput(inputId = x@Id,
+                       label = x@label,
+                       value = x@value,
+                       min = x@min,
+                       max = x@max,
+                       step = x@step,
+                       width = x@width)
+          })
+
+
