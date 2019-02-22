@@ -145,4 +145,53 @@ setMethod("drawElement",
                        width = x@width)
           })
 
+# 定义drawElement方法在input.slider类的实现----
+#' 定义drawElement方法在input.slider类的实现
+#'
+#' @param x input.slider. 输入对象实例
+#'
+#' @return 返回值
+#' @export
+#' @import shiny
+#' @include input.slider.R
+#'
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.slider"),
+          function(x){
+           sliderInput(inputId = x@Id,
+                       label = x@label,
+                       min = x@min,
+                       max = x@max,
+                       value = x@value,
+                       step = x@step,
+                       round = x@round,
+                       width = x@width)
+          })
+
+
+
+# 定义drawElement方法在input.checkboxGroup上的实现----
+#' 定义drawElement方法在input.checkboxGroup上的实现
+#'
+#' @param x input.checkboxGroup. 实例
+#'
+#' @return 返回值
+#' @include input.checkboxGroup.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.checkboxGroup"),
+          function(x){
+          checkboxGroupInput(inputId = x@Id,
+                             label = x@label,
+                             choiceNames = x@choiceNames,
+                             choiceValues = x@choiceValues,
+                             selected = x@selected,
+                             inline = x@inline,
+                             width = x@width)
+          })
 
