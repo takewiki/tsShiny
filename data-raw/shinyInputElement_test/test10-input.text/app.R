@@ -8,10 +8,6 @@
 #
 
 library(shiny)
-library(tsShiny)
-run.dataTable <- function (Id){
-  callModule(process.dataTable.preview,Id)
-}
 
 # Define UI for application that draws a histogram
 ui <- fluidPage(
@@ -27,8 +23,8 @@ ui <- fluidPage(
                      min = 1,
                      max = 50,
                      value = 30),
-         mdl.dataTable.preview2('dataTable2',label = 'bb2'),
-         mdl.dataTable.preview2('dataTable3',label = 'bb3')
+         drawElement(input.text(Id = 'user1',label = '请输入用户名:',isPassword = FALSE)),
+         drawElement(input.text(Id='password1',label = '请输入密码:',isPassword = TRUE))
       ),
 
       # Show a plot of the generated distribution
@@ -49,10 +45,6 @@ server <- function(input, output) {
       # draw the histogram with the specified number of bins
       hist(x, breaks = bins, col = 'darkgray', border = 'white')
    })
-   #callModule(process.dataTable.preview,'dataTable2')
-   #callModule(process.dataTable.preview,'dataTable3')
-   run.dataTable('dataTable2')
-   run.dataTable('dataTable3')
 }
 
 # Run the application

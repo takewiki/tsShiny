@@ -195,3 +195,101 @@ setMethod("drawElement",
                              width = x@width)
           })
 
+
+# 定义drawElement方法在input.text上的实现----
+#' 定义drawElement方法在input.text上的实现
+#'
+#' @param x input.text. input.text类
+#'
+#' @return 返回值
+#' @include input.text.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.text"),
+          function(x){
+            if (x@isPassword == FALSE){
+              textInput(inputId = x@Id,
+                        label = x@label,
+                        value = x@value,
+                        width = x@width,
+                        placeholder = x@placeholder)
+
+            }else{
+              passwordInput(inputId = x@Id,
+                            label = x@label,
+                            value = x@value,
+                            width = x@width,
+                            placeholder = x@placeholder)
+
+            }
+
+          })
+
+# 定义drawElement方法在output.print上的实现----
+#' 定义drawElement方法在output.print
+#'
+#' @param x output.print. output.print实例
+#'
+#' @return 返回值
+#' @import shiny
+#' @include output.print.R
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "output.print"),
+          function(x){
+            verbatimTextOutput(outputId = x@Id,
+                               placeholder = x@placeholder)
+
+          })
+
+# 定义drawElement方法在output.text上的实现----
+#' 定义drawElement方法在output.text上的实现
+#'
+#' @param x output.text.定义output.text的实例
+#'
+#' @return 返回值
+#' @include output.text.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "output.text"),
+          function(x){
+        textOutput(outputId = x@Id,inline = x@inline)
+
+          })
+
+# 定义drawElement方法在input.date上的实现----
+#' 定义drawElement方法在input.date上的实现
+#'
+#' @param x input.date. 实例化对象
+#'
+#' @return 返回值
+#' @import shiny
+#' @include input.date.R
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.date"),
+          function(x){
+            dateInput(inputId = x@Id,
+                      label = x@label,
+                      value = x@value,
+                      min = x@min,
+                      max = x@max,
+                      format = x@format,
+                      startview = x@startview,
+                      weekstart = x@weekstart,
+                      language = x@language,
+                      width = x@width,
+                      autoclose = x@autoclose)
+
+          })
+

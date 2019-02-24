@@ -25,7 +25,8 @@ ui <- fluidPage(
                      value = 30),
          mdl.numeric('n1'),
          mdl.numeric('n2'),
-         mdl.numeric('n3')
+         mdl.numeric('n3'),
+         mdl.numeric('n4')
       ),
 
       # Show a plot of the generated distribution
