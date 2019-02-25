@@ -15,6 +15,7 @@ Collate:
     'shinyElement.R'
     'shinyInputElement.R'
     'superDate.R'
+    'input.dateRange.R'
     'input.date.R'
     'shinyOutputElement.R'
     'superTextPlusUI.R'

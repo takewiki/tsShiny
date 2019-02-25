@@ -293,3 +293,33 @@ setMethod("drawElement",
 
           })
 
+
+# 定义drawElement方法在input.dateRange上的实现----
+#' Title
+#'
+#' @param x input.dateRange.
+#'
+#' @return 返回值
+#' @include input.dateRange.R
+#' @import shiny
+#' @export
+#'
+#' @examples drawElement();
+setMethod("drawElement",
+          c("x" = "input.dateRange"),
+          function(x){
+            dateRangeInput(inputId = x@Id,
+                      label = x@label,
+                      start=x@start,
+                      end=x@end,
+                      min = x@min,
+                      max = x@max,
+                      format = x@format,
+                      startview = x@startview,
+                      weekstart = x@weekstart,
+                      language = x@language,
+                      separator = x@separator,
+                      width = x@width,
+                      autoclose = x@autoclose)
+
+          })
